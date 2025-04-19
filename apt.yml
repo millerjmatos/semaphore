@@ -2,64 +2,67 @@
 - name: Install Linux apps
   hosts: all
   become: true
-  apt:
-    name: '{{ item }}'
-    install_recommends: yes
-    state: present
-  loop:
-  - apt-transport-https
-  - bash-completion
-  - ca-certificates
-  - color-picker
-  - curl
-  - dos2unix
-  - duf
-  - filezilla
-  - flameshot
-  - flatpak
-  - fonts-hack
-  - gdebi
-  - git
-  - gnome-font-viewer
-  - gnupg
-  - gnupg-agent
-  - gparted
-  - gsmartcontrol
-  - htop
-  - jq
-  - libarchive-tools
-  - libguestfs-tools
-  - make
-  - memtester
-  - mtr
-  - ncdu
-  - net-tools
-  - network-manager-l2tp
-  - network-manager-l2tp-gnome
-  - neofetch
-  - nmap
-  - openssh-client
-  - openssh-server
-  - pdfarranger
-  - plocate
-  - preload
-  - python3-pip
-  - python3-venv
-  - pwgen
-  - rclone
-  - rsync
-  - screen
-  - software-properties-common
-  - steam
-  - syncthing
-  - tilix
-  - tree
-  - ubuntu-restricted-extras
-  - vim
-  - vlc
-  - webapp-manager
-  - wget
-  - whois
-  - wireshark
-  - xl2tpd
-  - xrdp
+  tasks:
+
+  - name: Install Linux apps
+    apt:
+      name: '{{ item }}'
+      install_recommends: yes
+      state: present
+    loop:
+    - apt-transport-https
+    - bash-completion
+    - ca-certificates
+    - color-picker
+    - curl
+    - dos2unix
+    - duf
+    - filezilla
+    - flameshot
+    - flatpak
+    - fonts-hack
+    - gdebi
+    - git
+    - gnome-font-viewer
+    - gnupg
+    - gnupg-agent
+    - gparted
+    - gsmartcontrol
+    - htop
+    - jq
+    - libarchive-tools
+    - libguestfs-tools
+    - make
+    - memtester
+    - mtr
+    - ncdu
+    - net-tools
+    - network-manager-l2tp
+    - network-manager-l2tp-gnome
+    - neofetch
+    - nmap
+    - openssh-client
+    - openssh-server
+    - pdfarranger
+    - plocate
+    - preload
+    - python3-pip
+    - python3-venv
+    - pwgen
+    - rclone
+    - rsync
+    - screen
+    - software-properties-common
+    - steam
+    - syncthing
+    - tilix
+    - tree
+    - ubuntu-restricted-extras
+    - vim
+    - vlc
+    - webapp-manager
+    - wget
+    - whois
+    - wireshark
+    - xl2tpd
+    - xrdp
