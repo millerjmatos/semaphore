@@ -2,6 +2,7 @@
 - name: Install Linux apps
   hosts: all
   become: true
+  gather_facts: yes
   tasks:
 
   - name: Install Linux apps
@@ -9,7 +10,6 @@
       name: '{{ item }}'
       install_recommends: yes
       state: present
-      update_cache: yes
     loop:
     - apt-transport-https
     - bash-completion
