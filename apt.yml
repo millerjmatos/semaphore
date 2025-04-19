@@ -1,15 +1,14 @@
 ---
-- name: Install Linux apps
-  hosts: all
+- name: Install Linux apps via shell
+  hosts: localhost
   become: true
   gather_facts: yes
-  tasks:
 
-  - name: Install Linux apps
-    apt:
-      name: '{{ item }}'
-      install_recommends: yes
-      state: present
+  tasks:
+  - name: Install Linux apps via apt
+    shell: apt update && apt install -y {{ item }}
+    args:
+      warn: false
     loop:
     - apt-transport-https
     - bash-completion
