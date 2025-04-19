@@ -5,10 +5,13 @@
   gather_facts: yes
 
   tasks:
-  - name: Install Linux apps via apt
-    shell: apt update && apt install -y {{ item }}
+  - name: Update apt cache
+    shell: apt update
     args:
-      warn: false
+      _raw_params: apt update
+
+  - name: Install Linux apps via apt
+    shell: apt install -y {{ item }}
     loop:
     - apt-transport-https
     - bash-completion
